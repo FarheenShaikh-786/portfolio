@@ -1062,7 +1062,7 @@ function Footer() {
     <footer className="border-t border-white/10 bg-bg-deep/90 py-8 backdrop-blur-md">
       <div className="section-container flex flex-col items-center justify-between gap-3 text-[11px] text-slate-500 sm:flex-row">
         <p>
-          © {new Date().getFullYear()} Farheen Shaikh. Crafted with JavaScript, passion and a bit
+          © {new Date().getFullYear()} Farheen Shaikh
           of neon.
         </p>
         <p className="font-mono uppercase tracking-[0.25em] text-slate-500">
