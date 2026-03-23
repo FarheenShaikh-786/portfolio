@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-bg-deep font-sans text-slate-100 antialiased;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display tracking-tight;
+}
+
+.font-clash {
+  font-family: 'Clash Display', 'Space Grotesk', 'Poppins', sans-serif;
+}
+
+p {
+  @apply leading-relaxed text-slate-400;
+}
+
+/* Animated soft gradient wash (page backdrop) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% -30%, rgba(0, 245, 255, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 100% 20%, rgba(122, 92, 255, 0.14), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 0% 80%, rgba(255, 78, 205, 0.08), transparent 45%),
+    #050816;
+  background-size: 200% 200%;
+  animation: gradient-shift 18s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg-deep;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-secondary/40 hover:bg-primary/50;
+}
+
+.glass-panel {
+  @apply border border-primary/15 bg-bg-elevated/90 shadow-glow-soft backdrop-blur-2xl;
+}
+
+.premium-card {
+  @apply transition duration-300 hover:scale-[1.02];
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 24px rgba(0, 245, 255, 0.08),
+    0 18px 45px rgba(2, 6, 23, 0.45);
+}
+
+.premium-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(0, 245, 255, 0.25),
+    0 0 34px rgba(0, 245, 255, 0.18),
+    0 0 56px rgba(122, 92, 255, 0.16),
+    0 26px 58px rgba(2, 6, 23, 0.55);
+}
+
+.neon-border {
+  box-shadow:
+    0 0 0 1px rgba(0, 245, 255, 0.35),
+    0 0 28px rgba(0, 245, 255, 0.25),
+    0 0 56px rgba(122, 92, 255, 0.2),
+    0 0 32px rgba(255, 78, 205, 0.1);
+}
+
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 245, 255, 0.14) 0%,
+    rgba(122, 92, 255, 0.08) 35%,
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition:
+    opacity 420ms ease-out,
+    transform 120ms ease-out;
+  z-index: 35;
+  filter: blur(12px);
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 245, 255, 0.1) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.section-container {
+  @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+/* Name gradient — blue → purple → pink glow */
+.text-name-gradient {
+  background: linear-gradient(
+    115deg,
+    #00f5ff 0%,
+    #4fd4ff 25%,
+    #7a5cff 55%,
+    #c084fc 78%,
+    #ff4ecd 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 24px rgba(0, 245, 255, 0.35));
+}
+
+.text-heading-gradient {
+  background: linear-gradient(120deg, #00f5ff 0%, #7a5cff 55%, #ff4ecd 100%);
+  background-size: 180% 180%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: heading-gradient-flow 7s ease-in-out infinite;
+}
+
+@keyframes heading-gradient-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Link underline slide */
+.link-glow {
+  @apply relative inline-block text-primary transition-colors hover:text-accent;
+}
+.link-glow::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-300;
+}
+.link-glow:hover::after {
+  @apply w-full;
+}
+
+/* Form inputs — neon focus */
+.input-neon {
+  @apply rounded-xl border border-white/10 bg-[#0a0f24]/90 px-3 text-sm text-slate-100 outline-none transition;
+  @apply focus:border-primary/70 focus:shadow-[0_0_0_3px_rgba(0,245,255,0.2),0_0_24px_rgba(122,92,255,0.15)] focus:ring-0;
+}
+
+/* Pulsing ring behind profile (keyframes used inline in component — backup) */
+@keyframes neon-pulse-ring {
+  0%,
+  100% {
+    box-shadow:
+      0 0 40px rgba(0, 245, 255, 0.2),
+      0 0 80px rgba(122, 92, 255, 0.12);
+    opacity: 0.5;
+  }
+  50% {
+    box-shadow:
+      0 0 56px rgba(0, 245, 255, 0.4),
+      0 0 100px rgba(255, 78, 205, 0.2);
+    opacity: 0.95;
+  }
+}
+
+/* Profile avatar — outer aura pulse (blue + purple) */
+@keyframes profile-aura-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+.profile-avatar-aura {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 245, 255, 0.35) 0%,
+    rgba(122, 92, 255, 0.28) 42%,
+    transparent 70%
+  );
+  animation: profile-aura-pulse 3.2s ease-in-out infinite;
+}
+
+.profile-avatar-aura--hover {
+  animation: none;
+  opacity: 0.95;
+  transform: scale(1.12);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* Ring pulse (subtle glow breathing) */
+@keyframes profile-ring-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.45))
+      drop-shadow(0 0 20px rgba(122, 92, 255, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(0, 245, 255, 0.75))
+      drop-shadow(0 0 32px rgba(122, 92, 255, 0.55));
+  }
+}
+
+.profile-avatar-ring-pulse {
+  animation: profile-ring-pulse 2.8s ease-in-out infinite;
+}
