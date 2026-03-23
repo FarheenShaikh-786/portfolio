@@ -1063,7 +1063,6 @@ function Footer() {
       <div className="section-container flex flex-col items-center justify-between gap-3 text-[11px] text-slate-500 sm:flex-row">
         <p>
           © {new Date().getFullYear()} Farheen Shaikh
-          of neon.
         </p>
         <p className="font-mono uppercase tracking-[0.25em] text-slate-500">
           Nanded • Maharashtra • India
