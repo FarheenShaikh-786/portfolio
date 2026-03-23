@@ -233,9 +233,9 @@ function Hero() {
           </div>
 
           <div className="space-y-6">
-            <h1 className="text-6xl font-light text-slate-50 tracking-tight">
+            <h1 className="font-display text-display-xl text-slate-50">
               Hi, I&apos;m{' '}
-              <span className="text-name-gradient bg-clip-text">Farheen Shaikh</span>
+              <span className="text-name-gradient">Farheen Shaikh</span>
             </h1>
             <TypingHeadline />
             <p className="max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
@@ -289,7 +289,7 @@ function Hero() {
                   <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary/80">
                     Profile
                   </p>
-                  <p className="mt-1 text-xl font-medium text-slate-50">
+                  <p className="mt-1 font-display text-xl font-semibold text-slate-50">
                     Full Stack Java Dev
                   </p>
                 </div>
@@ -423,7 +423,7 @@ function SectionShell({
           <p className="inline-flex rounded-full border border-primary/25 bg-white/5 px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.28em] text-primary/90 backdrop-blur-sm">
             {eyebrow}
           </p>
-          <h2 className="text-4xl font-light tracking-tight text-slate-50">
+          <h2 className="font-display text-display-lg font-semibold tracking-tight text-slate-50">
             <span className="text-heading-gradient">{title}</span>
           </h2>
           <p className="text-base leading-relaxed text-slate-400">{description}</p>
@@ -706,7 +706,7 @@ function Projects() {
                 <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-gradient-to-br from-primary/20 via-secondary/15 to-accent/20 opacity-70 blur-3xl transition group-hover:opacity-100" />
                 <div className="relative z-[1] flex flex-col gap-4 transition duration-300 group-hover:opacity-25 group-hover:blur-[0.5px]">
                   <div className="flex items-center justify-between gap-3">
-                    <h3 className="text-lg font-medium text-slate-50">{proj.name}</h3>
+                    <h3 className="font-clash text-lg text-slate-50">{proj.name}</h3>
                     <span className="rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
                       Featured
                     </span>
